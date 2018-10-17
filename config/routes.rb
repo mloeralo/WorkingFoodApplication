@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
+  get 'favorites/index'
+  get 'users/new'
   get 'ingredients/index'
   get 'units/index'
   get 'categories/index'
   #get 'recipes/index'
-
+  get 'users/new'
   get 'static_pages/home'
   get 'static_pages/favorites'
   get 'units', to: 'units#index', as: 'units'

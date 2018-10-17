@@ -10,11 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_16_150806) do
+ActiveRecord::Schema.define(version: 2018_10_17_192142) do
 
   create_table "categories", force: :cascade do |t|
     t.integer "cat_id"
     t.string "cat_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "favorites", force: :cascade do |t|
+    t.string "fav_name"
+    t.string "recipe_link"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -34,6 +41,14 @@ ActiveRecord::Schema.define(version: 2018_10_16_150806) do
   create_table "units", force: :cascade do |t|
     t.string "unit_name"
     t.string "unit_symbol"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.string "password"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

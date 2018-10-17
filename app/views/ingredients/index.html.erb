@@ -22,6 +22,14 @@
 <br><br>
 
   <div class="col-sm-3" >
+
+    <ul class="list-group">
+    <% @favorites.each do |favorites| %>
+    <li  id='favorites'class="list-group-item " ><span class="glyphicon glyphicon-star pull-left " style="color:yellow "></span> <%= link_to favorites.fav_name ,favorites.recipe_link%></li>
+    <% end %>
+    </ul>
+
+
   </div>
   <div class="col-sm-6">
     <!-- <h1>Listing Ingredients</h1> -->

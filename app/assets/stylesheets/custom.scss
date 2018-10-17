@@ -142,3 +142,27 @@ p{
  body{
    background-color: white;
  }
+ /* forms */
+
+ input, textarea, select, .uneditable-input {
+   border: 1px solid #bbb;
+   width: 60%;
+   margin-left: 20%;
+   margin-right: auto;
+   margin-bottom: 15px;
+
+ }
+label{
+  margin-left: 20%;
+  margin-right: auto;
+
+
+}
+ input {
+   height: auto !important;
+ }
+
+#favorites{
+
+  margin:1%;
+}
