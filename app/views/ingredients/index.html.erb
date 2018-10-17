@@ -24,7 +24,23 @@
   <div class="col-sm-3" >
   </div>
   <div class="col-sm-6">
+    <!-- <h1>Listing Ingredients</h1> -->
 
+
+    <!-- <% @ingredients.each do |ingredients| %>
+      <tr>
+        <td><%= ingredients.ing_name%></td>
+
+      </tr>
+    <% end %> -->
+
+    <ul class="list-group">
+    <% @ingredients.each do |ingredients| %>
+    <li class="list-group-item " ><%= ingredients.ing_name%><span class="glyphicon glyphicon-remove  pull-right " style="color:maroon "></span></li>
+    <% end %>
+    </ul>
+
+    <br>
   </div>
   <div class="col-sm-3">
 

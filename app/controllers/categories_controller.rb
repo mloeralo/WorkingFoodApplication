@@ -1,11 +1,9 @@
 class CategoriesController < ApplicationController
+#This method display the list of all available categories
   def index
-    #Move it to a new method
-
     @categories=Categories.all
-
   end
-  def new
+  def new (cat_name)
     @categories=Categories.new(cat_id: 1, cat_name:"Carbohydrates")
     @categories.save
 

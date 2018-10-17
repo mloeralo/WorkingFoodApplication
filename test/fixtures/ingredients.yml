@@ -1,0 +1,33 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+   ing_name: MyString
+  : MyString
+   weight: MyString
+  : 9.99
+   quantity: MyString
+  : 9.99
+   description: MyString
+  : MyString
+   unit_id: MyString
+  : 1
+   cat_id: MyString
+  integer: MyString
+   expiration: MyString
+  : 2018-10-16
+
+two:
+   ing_name: MyString
+  : MyString
+   weight: MyString
+  : 9.99
+   quantity: MyString
+  : 9.99
+   description: MyString
+  : MyString
+   unit_id: MyString
+  : 1
+   cat_id: MyString
+  integer: MyString
+   expiration: MyString
+  : 2018-10-16

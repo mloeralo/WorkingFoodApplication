@@ -1,0 +1,21 @@
+<h1>Listing units</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Id:</th>
+      <th>Name:</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+<% @units.each do |units| %>
+  <tr>
+    <td><%= units.unit_name%></td>
+    <td><%= units.unit_symbol%></td>
+
+  </tr>
+<% end %>
+</table>
+
+<br>

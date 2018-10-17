@@ -10,11 +10,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_12_195610) do
+ActiveRecord::Schema.define(version: 2018_10_16_150806) do
 
   create_table "categories", force: :cascade do |t|
     t.integer "cat_id"
     t.string "cat_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "ingredients", force: :cascade do |t|
+    t.string "ing_name"
+    t.decimal "weight"
+    t.decimal "quantity"
+    t.string "description"
+    t.integer "unit_id"
+    t.integer "cat_id"
+    t.date "expiration"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "units", force: :cascade do |t|
+    t.string "unit_name"
+    t.string "unit_symbol"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
