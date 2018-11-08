@@ -1,10 +1,20 @@
 Rails.application.routes.draw do
+  get 'sessions/new'
   get 'favorites/index'
-  get 'users/new'
+
+ get  'users',  to: 'users#new'
+ get  'users',  to: 'users#show'
+ post 'users',  to: 'users#create'
+ get    'sessions',   to: 'sessions#new'
+ post   'sessions',   to: 'sessions#create'
+ delete 'sessions',  to: 'sessions#destroy'
+
+
   get 'ingredients/index'
   get 'units/index'
   get 'categories/index'
   #get 'recipes/index'
+  #get 'users/new'
 
   get 'static_pages/home'
   get 'static_pages/favorites'
@@ -15,7 +25,7 @@ Rails.application.routes.draw do
   #root 'application#hello'
   resources :categories
   resources :users
-  root 'ingredients#index'
+  root 'static_pages#home'
   #root 'static_pages#home'
 
   #root 'recipes#index'

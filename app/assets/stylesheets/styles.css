@@ -1,0 +1,69 @@
+body {
+    background-color: #ccc;
+}
+li{
+  font-size: 0.5em;
+}
+
+.bg-maroon {
+    background-color: #841515;
+}
+
+.footer {
+    text-align: center;
+    background-color: #333;
+    color: #fff;
+    padding: 30px;
+}
+
+.footer p {
+    margin: 10px;
+}
+
+.information {
+    margin: 50px 0;
+    background-color: #ccc;
+}
+
+.information .card{
+    margin: 20px 0;
+/*    height: 27vh;*/
+    height: 200px;
+}
+
+.information .card .btn {
+    background-color: #fc2a2a;
+}
+
+.jumbotron {
+    color: #fff;
+    background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=67fb2e7b1fbe39b18b51146234ef38aa&auto=format&fit=crop&w=1050&q=80);
+    background-repeat: no-repeat;
+    background-size: cover;
+/*    height: 60vh;*/
+    height: 400px;
+}
+.navbar{
+  font-size: 3em;
+}
+.navbar-light .navbar-brand {
+    color: #fff;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: #fff;
+}
+
+.carousel-section h3 {
+    margin: 25px 0;
+    text-align: center;
+    color: #fff;
+}
+
+.carousel-section {
+    background-color: #555;
+}
+.nav-item{
+
+  margin: 0 10px;
+}
