@@ -21,7 +21,7 @@ li{
 }
 
 .information {
-    margin: 50px 0;
+    padding: 50px 0;
     background-color: #ccc;
 }
 
@@ -83,7 +83,7 @@ li{
 }
 /*Use to add the scroll bar in the API list of recipes*/
 .scroll{
-    overflow: scroll;
+    overflow-y: scroll;
 
     height: 300px;
 }
@@ -175,4 +175,40 @@ li{
       padding: 0;
       margin: 0;
       padding-right: 5px
+  }
+
+  .format a {
+
+    font-size: 16px;
+    color: #fff;
+
+  }
+
+  .format a:hover {
+    color: #ff1616;
+    text-decoration: none;
+  }
+
+  .jumbotron-fluid {
+    margin: 0 !important;
+  }
+
+  .nav-item {
+    height: 40px;
+  }
+
+  .login h1{
+    margin: 15px 0;
+  }
+
+  .signup h1 {
+    margin: 15px 0;
+  }
+
+  .signup input {
+    margin-bottom: 20px;
+  }
+
+  .login input {
+    margin-bottom: 40px;
   }
