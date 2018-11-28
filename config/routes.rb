@@ -1,21 +1,18 @@
 Rails.application.routes.draw do
-  get 'sessions/new'
+get 'sessions/new'
   get 'favorites/index'
 
  get  'users',  to: 'users#new'
  get  'users',  to: 'users#show'
  post 'users',  to: 'users#create'
- get    'sessions',   to: 'sessions#new'
- post   'sessions',   to: 'sessions#create'
+ get  'sessions',   to: 'sessions#new'
+ post 'sessions',   to: 'sessions#create'
  delete 'sessions',  to: 'sessions#destroy'
 
-
+  get 'recipes/index'
   get 'ingredients/index'
   get 'units/index'
   get 'categories/index'
-  #get 'recipes/index'
-  #get 'users/new'
-
   get 'static_pages/home'
   get 'static_pages/favorites'
   get 'units', to: 'units#index', as: 'units'

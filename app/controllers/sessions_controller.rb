@@ -1,5 +1,14 @@
 class SessionsController < ApplicationController
   def new
+    @user = User.new
+end
+    def show
+     @user = User.find(params[:id])
+     @ingredients=Ingredient.all
+     @favorites= Favorite.all
+     @search_term = params[:looking_for] || 'cheese'
+     @recipes = Recipe.for(@search_term)
+
   end
   def create
      user = User.find_by(email: params[:session][:email].downcase)
@@ -9,7 +18,7 @@ class SessionsController < ApplicationController
        # Log the user in and redirect to the user's show page.
      else
        # Create an error message.
-        flash[:danger] = 'Invalid email/password combination' # Not quite right!
+        #flash[:danger] = 'Invalid email/password combination' # Not quite right!
        render 'new'
      end
    end

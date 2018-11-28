@@ -10,13 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_07_191608) do
+ActiveRecord::Schema.define(version: 2018_11_27_215717) do
 
   create_table "categories", force: :cascade do |t|
-    t.integer "cat_id"
+    t.integer "ingredient_id"
     t.string "cat_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["ingredient_id"], name: "index_categories_on_ingredient_id"
   end
 
   create_table "favorites", force: :cascade do |t|
@@ -39,10 +40,12 @@ ActiveRecord::Schema.define(version: 2018_11_07_191608) do
   end
 
   create_table "units", force: :cascade do |t|
+    t.integer "ingredient_id"
     t.string "unit_name"
     t.string "unit_symbol"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["ingredient_id"], name: "index_units_on_ingredient_id"
   end
 
   create_table "users", force: :cascade do |t|

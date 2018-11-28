@@ -36,12 +36,26 @@ li{
 }
 
 .jumbotron {
-    color: #fff;
-    background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=67fb2e7b1fbe39b18b51146234ef38aa&auto=format&fit=crop&w=1050&q=80);
+    
+    background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(https://images.unsplash.com/photo-1498837167922-ddd27525d352?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=8a5e4cac8bcaf69ffaf5d3b1c2b063e4&auto=format&fit=crop&w=1950&q=80);
     background-repeat: no-repeat;
     background-size: cover;
 /*    height: 60vh;*/
-    height: 400px;
+    height: 500px;
+
+}
+.jumbotron li {
+    color:black;
+    font-size: 15px;
+}
+.jumbotron h1 {
+    color: #fff;
+}
+.jumbotron h2 {
+    color: #fff;
+}
+.jumbotron h3 {
+    color: #fff;
 }
 .navbar{
   font-size: 3em;
@@ -67,3 +81,98 @@ li{
 
   margin: 0 10px;
 }
+/*Use to add the scroll bar in the API list of recipes*/
+.scroll{
+    overflow: scroll;
+
+    height: 300px;
+}
+/*This is for the icons*/
+* {
+    margin: 0; padding: 0;
+  }
+  body {
+    font-size: 100%;
+  }
+  .accordion {
+    width: 380px;
+    margin: 20px auto;
+  /*  border: 1px solid black;*/
+  }
+  .accordion h1, h2, h3, h4 {
+    cursor: pointer;
+  }
+  .accordion h2, h3, h4 {
+    font-family: "News Cycle";
+  }
+  .accordion h1 {
+    padding: 15px 20px;
+    background-color: #f2f2f2;
+    font-family: Lobster;
+    font-size: 1.5rem;
+    font-weight: normal;
+    color: #841515;
+    clear: both;
+  }
+  .accordion h1:hover {
+    color: #ff1616;
+  }
+  .accordion h1:first-child {
+    border-radius: 10px 10px 0 0;
+  }
+  .accordion h1:last-of-type {
+    border-radius: 0 0 10px 10px;
+  }
+  .accordion h1:not(:last-of-type) {
+    border-bottom: 1px dotted #1abc9c;
+  }
+  .accordion div, .accordion p {
+    display: none;
+  }
+  .accordion h2 {
+    padding: 5px 25px;
+    background-color: #841515;
+    font-size: 1.1rem;
+    color: #fff;
+  }
+  .accordion h2:hover {
+    background-color: #ff1616;
+  }
+  .accordion h3 {
+    padding: 5px 30px;
+    background-color: #b94152;
+    font-size: .9rem;
+    color: #ddd; 
+  }
+  .accordion h3:hover {
+    background-color: #a93142;
+  }
+  .accordion h4 {
+    padding: 5px 35px;
+    background-color: #ffc25a;
+    font-size: .9rem;
+    color: #af720a; 
+  }
+  .accordion h4:hover {
+    background-color: #e0b040;
+  }
+  .accordion p {
+    padding: 15px 35px;
+    background-color: #ddd;
+    font-family: "Georgia";
+    font-size: .8rem;
+    color: #333;
+    line-height: 1.3rem;
+  }
+  .accordion .opened-for-codepen {
+    display: block;
+  }
+  
+  .accordion h1 img {
+      float: left;
+      clear: both;
+      width: 30px;
+      padding: 0;
+      margin: 0;
+      padding-right: 5px
+  }

@@ -18,7 +18,7 @@
             <div class="jumbotron jumbotron-fluid">
                 <div class="container">
                     <h1 class="display-4">Welcome to Smart Recipes!</h1>
-                    <p class="lead">This app holds all of your information needs about what recipes you can make and a place to store favorite recipes for quick and easy access!</p>
+                    <h3 class="lead">This app holds all of your information needs about what recipes you can make and a place to store favorite recipes for quick and easy access!</h3>
                 </div>
             </div>
         </section>
@@ -30,7 +30,7 @@
                             <div class="card-body">
                                 <h5 class="card-title">Login</h5>
                                 <p class="card-text">Got an account already! Go ahead and login here!</p>
-                                <a href="#" class="btn btn-primary">Login Here</a>
+                                <p class="btn btn-primary"><%= link_to "Log In ",   '/sessions/new' %></p>
                             </div>
                         </div>
                     </div>
@@ -38,8 +38,8 @@
                         <div class="card">
                             <div class="card-body">
                                 <h5 class="card-title">Sign Up</h5>
-                                <p class="card-text">Don't have an account? No problem! Sign up here for your new best place for recipes and cooking!</p>
-                                <a href="#" class="btn btn-primary">Sign Up</a>
+                                <p class="card-text">'Do not have an account? No problem! Sign up here for your new best place for recipes and cooking!'</p>
+                                <p class="btn btn-primary"><%= link_to "Sign Up ",  '/users/new' %></p>
                             </div>
                         </div>
                     </div>

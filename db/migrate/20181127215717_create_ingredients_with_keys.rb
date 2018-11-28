@@ -10,7 +10,19 @@ class CreateIngredients < ActiveRecord::Migration[5.2]
       t.date :expiration
 
       t.timestamps
-  
+    end
+    create_table :categories do |t|
+      t.references :ingredient, foreign_key: true
+      t.string :cat_name
+
+      t.timestamps
+    end
+
+    create_table :units do |t|
+      t.references :ingredient, foreign_key: true
+      t.string :unit_name
+      t.string :unit_symbol
+      t.timestamps
     end
   end
 end

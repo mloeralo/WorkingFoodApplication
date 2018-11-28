@@ -1,16 +1,9 @@
 class RecipesController < ApplicationController
-
+  #this is going to be the primary controller
   def index
-    @tag = query.fetch(:tags, 'all')
-    @recipes, @errors = Spoonacular::Recipe.random(query)
-  end
-
-  def show
-    @recipe = Spoonacular::Recipe.find(params[:id])
-  end
-
-  private
-  def query
-    params.fetch(:query, {})
+    @search_term = params[:looking_for] || 'cheese'
+    @recipes = Recipe.for(@search_term)
+    @ingredients=Ingredient.all
+    @favorites= Favorite.all
   end
 end

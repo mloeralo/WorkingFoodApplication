@@ -1,11 +1,14 @@
 class UsersController < ApplicationController
   def new
          @user = User.new
+         
   end
   def show
      @user = User.find(params[:id])
      @ingredients=Ingredient.all
      @favorites= Favorite.all
+     @search_term = params[:looking_for] || 'cheese'
+  	 @recipes = Recipe.for(@search_term)
 
   end
 

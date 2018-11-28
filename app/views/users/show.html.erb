@@ -1,72 +1,104 @@
-<% provide(:title, 'Welcome') %>
-<h1>Welcome</h1>
+<!doctype html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+        <!-- Custom CSS -->
+        <!-- <link rel="stylesheet" href=".../styles.css"> -->
+        <title>Smart Recipes®</title>
+    </head>
+    <body>
+
+        <section class="introduction">
+            <div class="jumbotron jumbotron-fluid">
+                <div class="container">
+                    <h1 class="display-4">Welcome to your fridge!</h1>
+                    
+                </div>
+                <div class="container">
+                <div class="row">
+                <div id="favoritesTitle" class="col-sm-3" >
+                  <h2>  Favorites</h2>
+                
+                
+                
+                </div>
+                <div id="fridgeTitle" class="col-sm-3">
+                <h2>Fridge</h2>
+                </div>
+                
+                
+                <div id="recipesTitle" class="col-sm-6">
+                <h2>  Recipes</h2>
+                </div>
+                
+                <br><br>
+                
+                  <div class="col-sm-3" >
+                
+                    <ul class="list-group">
+                    <% @favorites.each do |favorites| %>
+                    <li  id='favorites'class="list-group-item " ><span class="glyphicon glyphicon-star pull-left " style="color:yellow "></span> <%= link_to favorites.fav_name ,favorites.recipe_link%></li>
+                    <% end %>
+                    </ul>
+                
+                
+                  </div>
+                
+<div class="col-sm-3" >
+   
 
 
-
-  <div id="title" class="col-sm-12">
-<h1>Welcome to Smart Recipes</h1>
+<ul class="list-group">
+     <% @ingredients.each do |ingredients| %>
+     <li class="list-group-item " ><%= ingredients.ing_name%><span class="glyphicon glyphicon-remove  pull-right " style="color:maroon "></span></li>
+     <% end %>
+ </ul>
+                
+<br>
 </div>
-<div class="container">
-<div class="row">
-<div id="favoritesTitle" class="col-sm-3" >
-  <p>  Favorites</p>
+<div class="col-sm-6" >
+   
 
 
-
-</div>
-<div id="fridgeTitle" class="col-sm-6">
-<p>Fridge</p>
-</div>
-
-
-<div id="recipesTitle" class="col-sm-3">
-<p>  Recipes</p>
+<ul class="list-group scroll">
+    <% @recipes.each do |course| %>
+     <li class="list-group-item " ><%= link_to(image_tag(course["image_url"], height: '100', width: '100'), course["f2f_url"])%> </span>
+     <%= link_to(course["title"], course["f2f_url"]) %></span></li>
+     <% end %>
+ </ul>
+                
+<br>
 </div>
 
-<br><br>
 
-  <div class="col-sm-3" >
+               
+                
+                 
+    </div>
+              </div>
 
-    <ul class="list-group">
-    <% @favorites.each do |favorites| %>
-    <li  id='favorites'class="list-group-item " ><span class="glyphicon glyphicon-star pull-left " style="color:yellow "></span> <%= link_to favorites.fav_name ,favorites.recipe_link%></li>
-    <% end %>
-    </ul>
-
-
-  </div>
-  <div class="col-sm-6">
-    <!-- <h1>Listing Ingredients</h1> -->
-
-
-    <!-- <% @ingredients.each do |ingredients| %>
-      <tr>
-        <td><%= ingredients.ing_name%></td>
-
-      </tr>
-    <% end %> -->
-
-    <ul class="list-group">
-    <% @ingredients.each do |ingredients| %>
-    <li class="list-group-item " ><%= ingredients.ing_name%><span class="glyphicon glyphicon-remove  pull-right " style="color:maroon "></span></li>
-    <% end %>
-    </ul>
-
-    <br>
-  </div>
-  <div class="col-sm-3">
-
-  </div>
-</div>
-</div>
-<!---<div class="center jumbotron">
-
-</div>
-<div>
--->
+            </div>
+        </section>
+    
+       
+       
+      
+        
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    </body>
+</html>
 
 
 
-<!--<%= link_to image_tag("rails.png", alt: "Rails logo"),
-            'http://rubyonrails.org/' %>
--->
+
+
