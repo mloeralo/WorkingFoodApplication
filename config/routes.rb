@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'fridge/index'
+  get 'home/index'
 get 'sessions/new'
   get 'favorites/index'
 

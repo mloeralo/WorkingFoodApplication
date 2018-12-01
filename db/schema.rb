@@ -10,14 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_27_215717) do
+ActiveRecord::Schema.define(version: 2018_12_01_173715) do
 
   create_table "categories", force: :cascade do |t|
-    t.integer "ingredient_id"
     t.string "cat_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["ingredient_id"], name: "index_categories_on_ingredient_id"
   end
 
   create_table "favorites", force: :cascade do |t|
@@ -28,24 +26,25 @@ ActiveRecord::Schema.define(version: 2018_11_27_215717) do
   end
 
   create_table "ingredients", force: :cascade do |t|
+    t.integer "unit_id"
+    t.integer "category_id"
+    t.datetime "published_at"
     t.string "ing_name"
     t.decimal "weight"
     t.decimal "quantity"
     t.string "description"
-    t.integer "unit_id"
-    t.integer "cat_id"
     t.date "expiration"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["category_id"], name: "index_ingredients_on_category_id"
+    t.index ["unit_id"], name: "index_ingredients_on_unit_id"
   end
 
   create_table "units", force: :cascade do |t|
-    t.integer "ingredient_id"
     t.string "unit_name"
     t.string "unit_symbol"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["ingredient_id"], name: "index_units_on_ingredient_id"
   end
 
   create_table "users", force: :cascade do |t|

@@ -5,8 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-#Categories.create(cat_name:'Carbohydrates')
-#Categories.create(cat_name:'Protein')
+# Categories.create(cat_name:'Carbohydrates')
+# Categories.create(cat_name:'Protein')
 # Categories.create(cat_id:3,cat_name:'Dairy')
 # Categories.create(cat_id:4,cat_name:'Fruit')
 # Categories.create(cat_id:5,cat_name:'Vegetables')
@@ -40,5 +40,5 @@
 # Favorite.create(fav_name:'Irish Cream Ice Cream',recipe_link:'https://www.allrecipes.com/recipe/220449/irish-cream-ice-cream/?internalSource=hub%20recipe&referringContentType=Search&clickId=cardslot%203')
 # Favorite.create(fav_name:'Strawberry Spinach Salad ',recipe_link:'https://www.allrecipes.com/recipe/14276/strawberry-spinach-salad-i/?internalSource=hub%20recipe&referringContentType=Search&clickId=cardslot%204')
 # #User.create(name: 'Steve',email: 'steve@gmu.edu',password:'test')
-Ingredient.create(ing_name:'Chicken',weight:3,quantity:3,description:'Cage free eggs',unit_id:20,cat_id:9,expiration:'2018-12-20')
-Ingredient.create(ing_name:'Jalapeno',weight:3,quantity:3,description:'Cage free eggs',unit_id:20,cat_id:9,expiration:'2018-12-20')
+#Ingredient.create(unit_id:1,category_id:2,ing_name:'Eggs',weight:3,quantity:3,description:'Cage free',expiration:'2018-12-20')
+#Ingredient.create(unit_id:2,category_id:2,ing_name:'Cheese',weight:3,quantity:3,description:'Low fat',expiration:'2018-12-20')

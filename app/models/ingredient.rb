@@ -1,6 +1,7 @@
 class Ingredient < ApplicationRecord
 
-has_many :units
-has_many :categories
+belongs_to :unit
+belongs_to :category
+has_many :fridges
 
 end
