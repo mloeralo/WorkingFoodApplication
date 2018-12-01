@@ -41,7 +41,7 @@ li{
     background-repeat: no-repeat;
     background-size: cover;
 /*    height: 60vh;*/
-    height: 500px;
+    /* height: 750px; */
 
 }
 .jumbotron li {
@@ -101,6 +101,10 @@ li{
   }
   .accordion h1, h2, h3, h4 {
     cursor: pointer;
+  }
+
+  .accordion h1, h2, h3, h4, p {
+    margin: 0 !important;
   }
   .accordion h2, h3, h4 {
     font-family: "News Cycle";

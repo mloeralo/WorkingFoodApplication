@@ -6,8 +6,17 @@ class UsersController < ApplicationController
   def show
      @user = User.find(params[:id])
      @ingredients=Ingredient.joins("JOIN fridges ON fridges.ingredient_id = ingredients.id WHERE fridges.user_id=#{@user.id}")
+     @dairy=Ingredient.joins("JOIN fridges ON fridges.ingredient_id = ingredients.id WHERE fridges.user_id=#{@user.id} and ingredients.group_id=7")
+     @meats=Ingredient.joins("JOIN fridges ON fridges.ingredient_id = ingredients.id WHERE fridges.user_id=#{@user.id} and ingredients.group_id=8")
+     @fruits=Ingredient.joins("JOIN fridges ON fridges.ingredient_id = ingredients.id WHERE fridges.user_id=#{@user.id} and ingredients.group_id=9")
+     @vegetables=Ingredient.joins("JOIN fridges ON fridges.ingredient_id = ingredients.id WHERE fridges.user_id=#{@user.id} and ingredients.group_id=10")
+     @grains=Ingredient.joins("JOIN fridges ON fridges.ingredient_id = ingredients.id WHERE fridges.user_id=#{@user.id} and ingredients.group_id=11")
+     @spices=Ingredient.joins("JOIN fridges ON fridges.ingredient_id = ingredients.id WHERE fridges.user_id=#{@user.id} and ingredients.group_id=12")
+     @sweets=Ingredient.joins("JOIN fridges ON fridges.ingredient_id = ingredients.id WHERE fridges.user_id=#{@user.id} and ingredients.group_id=13")
+
      @favorites= Favorite.all
-     @search_term = params[:looking_for] || @ingredients[0].ing_name #only works with 1 first ingredient
+     @search_term = params[:looking_for] || 'cheese'
+
   	 @recipes = Recipe.for(@search_term)
 
   end

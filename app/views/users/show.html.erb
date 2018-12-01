@@ -36,15 +36,68 @@
                 
                 
 <div class="col-sm-6" >
-   
+
+          
+ <link href='https://fonts.googleapis.com/css?family=News+Cycle:400,700' rel='stylesheet' type='text/css'>
+<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
+  
+<aside class="accordion">
+    <h1><img src="https://i.imgur.com/0iuA943.png">Dairy</h1>
+    <div>
+    <%  @dairy.each do |ingredient| %>
+        <h2><%= ingredient.ing_name%></h2>
+        <p><%= ingredient.description%></p>
+        <% end %>
+	</div>
+    <h1><img src="https://i.imgur.com/za30Ttt.png">Meats</h1>
+    <div>
+        
+    <%  @meats.each do |ingredient| %>
+        <h2><%= ingredient.ing_name%></h2>
+        <p><%= ingredient.description%></p>
+        <% end %>
+	</div>
+    <h1><img src="https://i.imgur.com/gliOZxd.png">Fruits</h1>
+    <div>
+    <%  @fruits.each do |ingredient| %>
+        <h2><%= ingredient.ing_name%></h2>
+        <p><%= ingredient.description%></p>
+    <% end %>
+	
+	</div>
+    <h1><img src="https://i.imgur.com/nuojYN5.png">Sweets</h1>
+    <div>
+    <%  @vegetables.each do |ingredient| %>
+        <h2><%= ingredient.ing_name%></h2>
+        <p><%= ingredient.description%></p>
+    <% end %>
+	</div>
+    <h1><img src="https://i.imgur.com/CLz4y7H.png">Grains</h1>
+    <div>
+    <%  @grains.each do |ingredient| %>
+        <h2><%= ingredient.ing_name%></h2>
+        <p><%= ingredient.description%></p>
+    <% end %>
+	</div>
+    <h1><img src="https://i.imgur.com/naXUTJh.png">Spices</h1>
+    <div>
+    <%  @spices.each do |ingredient| %>
+        <h2><%= ingredient.ing_name%></h2>
+        <p><%= ingredient.description%></p>
+    <% end %>
+	</div>
+	<h1><img src="https://i.imgur.com/GTThsEa.png">Vegatables</h1>
+	<div>
+    <%  @sweets.each do |ingredient| %>
+        <h2><%= ingredient.ing_name%></h2>
+        <p><%= ingredient.description%></p>
+    <% end %>
+	</div>
+</aside>
+  
 
 
-<ul class="list-group">
-     <% @ingredients.each do |ingredient| %>
-     <li class="list-group-item " ><%= ingredient.ing_name%><span class="glyphicon glyphicon-remove  pull-right " style="color:maroon "></span></li>
-     <% end %>
- </ul>
-                
+
 <br>
 </div>
 <div class="col-sm-6" >
@@ -71,13 +124,41 @@
             </div>
         </section>
     
-       
-       
+        
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+        <script type="text/javascript">
+        var headers = ["H1","H2","H3","H4","H5","H6"];
+
+        $(".accordion").click(function(e) {
+          var target = e.target,
+              name = target.nodeName.toUpperCase();
+          
+          if($.inArray(name,headers) > -1) {
+            var subItem = $(target).next();
+            
+            //slideUp all elements (except target) at current depth or greater
+            var depth = $(subItem).parents().length;
+            var allAtDepth = $(".accordion p, .accordion div").filter(function() {
+              if($(this).parents().length >= depth && this !== subItem.get(0)) {
+                return true; 
+              }
+            });
+            $(allAtDepth).slideUp("fast");
+            
+            //slideToggle target content and adjust bottom border if necessary
+            subItem.slideToggle("fast",function() {
+                $(".accordion :visible:last").css("border-radius","0 0 10px 10px");
+            });
+            $(target).css({"border-bottom-right-radius":"0", "border-bottom-left-radius":"0"});
+          }
+        });
+        </script>
       
         
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     </body>
