@@ -22,13 +22,8 @@
                 </div>
                 <div class="container">
                 <div class="row">
-                <div id="favoritesTitle" class="col-sm-3" >
-                  <h2>  Favorites</h2>
-                
-                
-                
-                </div>
-                <div id="fridgeTitle" class="col-sm-3">
+            
+                <div id="fridgeTitle" class="col-sm-6">
                 <h2>Fridge</h2>
                 </div>
                 
@@ -39,24 +34,14 @@
                 
                 <br><br>
                 
-                  <div class="col-sm-3" >
                 
-                    <ul class="list-group">
-                    <% @favorites.each do |favorites| %>
-                    <li  id='favorites'class="list-group-item " ><span class="glyphicon glyphicon-star pull-left " style="color:yellow "></span> <%= link_to favorites.fav_name ,favorites.recipe_link%></li>
-                    <% end %>
-                    </ul>
-                
-                
-                  </div>
-                
-<div class="col-sm-3" >
+<div class="col-sm-6" >
    
 
 
 <ul class="list-group">
-     <% @ingredients.each do |ingredients| %>
-     <li class="list-group-item " ><%= ingredients.ing_name%><span class="glyphicon glyphicon-remove  pull-right " style="color:maroon "></span></li>
+     <% @ingredients.each do |ingredient| %>
+     <li class="list-group-item " ><%= ingredient.ing_name%><span class="glyphicon glyphicon-remove  pull-right " style="color:maroon "></span></li>
      <% end %>
  </ul>
                 

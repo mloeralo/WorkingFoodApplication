@@ -14,7 +14,7 @@ get 'sessions/new'
   get 'recipes/index'
   get 'ingredients/index'
   get 'units/index'
-  get 'categories/index'
+  get 'groups/index'
   get 'static_pages/home'
   get 'static_pages/favorites'
   get 'units', to: 'units#index', as: 'units'
@@ -22,7 +22,7 @@ get 'sessions/new'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   #root 'application#hello'
-  resources :categories
+  resources :groups
   resources :users
   root 'static_pages#home'
   #root 'static_pages#home'

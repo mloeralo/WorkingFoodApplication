@@ -9,7 +9,7 @@ class CreateUnits < ActiveRecord::Migration[5.2]
 	 
 		create_table :ingredients do |t|
 			t.belongs_to :unit, index: true
-			t.belongs_to :category, index: true
+			t.belongs_to :group, index: true
 			t.datetime :published_at
 			t.string "ing_name"
 			t.decimal "weight"

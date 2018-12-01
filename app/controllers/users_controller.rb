@@ -5,9 +5,9 @@ class UsersController < ApplicationController
   end
   def show
      @user = User.find(params[:id])
-     @ingredients=Ingredient.all
+     @ingredients=Ingredient.joins("JOIN fridges ON fridges.ingredient_id = ingredients.id WHERE fridges.user_id=#{@user.id}")
      @favorites= Favorite.all
-     @search_term = params[:looking_for] || 'cheese'
+     @search_term = params[:looking_for] || @ingredients[0].ing_name #only works with 1 first ingredient
   	 @recipes = Recipe.for(@search_term)
 
   end

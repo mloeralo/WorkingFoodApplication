@@ -1,6 +1,6 @@
 class CreateIngredients < ActiveRecord::Migration[5.2]
   def change
-    create_table :categories do |t|
+    create_table :groups do |t|
     t.string "cat_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -14,7 +14,7 @@ class CreateIngredients < ActiveRecord::Migration[5.2]
  
   create_table :ingredients do |t|
     t.belongs_to :unit, index: true
-    t.belongs_to :category, index: true
+    t.belongs_to :group, index: true
     t.datetime :published_at
     t.string "ing_name"
     t.decimal "weight"

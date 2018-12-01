@@ -3,7 +3,7 @@ class RecipesController < ApplicationController
   def index
     @search_term = params[:looking_for] || 'cheese'
     @recipes = Recipe.for(@search_term)
-    @ingredients=Ingredient.all
+    @ingredients=Ingredient.joins("JOIN fridges ON fridges.ingredient_id = ingredients.id")
     @favorites= Favorite.all
   end
 end
