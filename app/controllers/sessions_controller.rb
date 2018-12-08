@@ -6,7 +6,7 @@ end
      @user = User.find(params[:id])
      @ingredients=Ingredient.joins("JOIN fridges ON fridges.ingredient_id = ingredients.id")
      @favorites= Favorite.all
-     @search_term = params[:looking_for] || 'cheese'
+     @search_term = params[:looking_for] || @ingredients[0].ing_name
      @recipes = Recipe.for(@search_term)
 
   end

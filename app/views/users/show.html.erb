@@ -107,13 +107,20 @@
 <div class="col-sm-6" >
    
 
+<% if(@recipes==[])%>
+    <div class="list-group-item">
+    <p>Add ingredients to your fridge to get recipes</p>
+    <div>
 
-<ul class="list-group scroll">
+<%else%>
+        
+    <ul class="list-group scroll">
     <% @recipes.each do |course| %>
      <li class="list-group-item " ><%= link_to(image_tag(course["image_url"], height: '100', width: '100'), course["f2f_url"])%> </span>
      <%= link_to(course["title"], course["f2f_url"]) %></span></li>
      <% end %>
- </ul>
+    </ul>
+ <%end%>
                 
 <br>
 </div>

@@ -17,9 +17,23 @@ class UsersController < ApplicationController
      @sweets=Ingredient.joins("JOIN fridges ON fridges.ingredient_id = ingredients.id WHERE fridges.user_id=#{@user.id} and ingredients.group_id=13")
 
      @favorites= Favorite.all
-     @search_term = params[:looking_for] || 'cheese'
+     if @ingredients==[]
+      @recipes=[]
+     else
+      allIngredients=''
+      @ingredients.each do |ingredient|
+       allIngredients+=ingredient.ing_name+', '
+      end
+      @search_term = params[:looking_for] || allIngredients
+     
+      @recipes = Recipe.for(@search_term)
+      
+    
+    
+     end
 
-  	 @recipes = Recipe.for(@search_term)
+    
+  	
      @ingredient = Ingredient.new
      @groups=Group.all
      @units=Unit.all

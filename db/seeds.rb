@@ -50,5 +50,5 @@
 # Ingredient.create(unit_id:2,group_id:7,ing_name:'Cheese',weight:3,quantity:3,description:'Low fat',expiration:'2018-12-20')
 # Fridge.create(ingredient_id:5, user_id:1)
 # Fridge.create(ingredient_id:6, user_id:2)
-Ingredient.create(unit_id:2,group_id:7,ing_name:'Milk',weight:3,quantity:3,description:'Low fat',expiration:'2018-12-20')
-Fridge.create(ingredient_id:7, user_id:2)
+# Ingredient.create(unit_id:2,group_id:7,ing_name:'Milk',weight:3,quantity:3,description:'Low fat',expiration:'2018-12-20')
+# Fridge.create(ingredient_id:7, user_id:2)
