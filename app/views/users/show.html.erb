@@ -41,6 +41,8 @@
  <link href='https://fonts.googleapis.com/css?family=News+Cycle:400,700' rel='stylesheet' type='text/css'>
 <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
   
+<button class="open-button" onclick="openForm()">Add ingredient</button>
+
 <aside class="accordion">
     <h1><img src="https://i.imgur.com/0iuA943.png">Dairy</h1>
     <div>
@@ -65,18 +67,20 @@
     <% end %>
 	
 	</div>
-    <h1><img src="https://i.imgur.com/nuojYN5.png">Sweets</h1>
+    <h1><img src="https://i.imgur.com/GTThsEa.png">Vegatables</h1>
     <div>
     <%  @vegetables.each do |ingredient| %>
         <h2><%= ingredient.ing_name%></h2>
-        <p><%= ingredient.description%></p>
+        <p><%= ingredient.description%><%= button_to "delete",  {:controller => :ingredients,
+        :action => 'destroy', :id => ingredient.id }, :method => :delete%> </p>
     <% end %>
 	</div>
     <h1><img src="https://i.imgur.com/CLz4y7H.png">Grains</h1>
     <div>
     <%  @grains.each do |ingredient| %>
         <h2><%= ingredient.ing_name%></h2>
-        <p><%= ingredient.description%></p>
+        <p><%= ingredient.description%><%= button_to "delete",  {:controller => :ingredients,
+        :action => 'destroy', :id => ingredient.id }, :method => :delete%> </p>
     <% end %>
 	</div>
     <h1><img src="https://i.imgur.com/naXUTJh.png">Spices</h1>
@@ -86,7 +90,7 @@
         <p><%= ingredient.description%></p>
     <% end %>
 	</div>
-	<h1><img src="https://i.imgur.com/GTThsEa.png">Vegatables</h1>
+	<h1><img src="https://i.imgur.com/nuojYN5.png">Sweets</h1>
 	<div>
     <%  @sweets.each do |ingredient| %>
         <h2><%= ingredient.ing_name%></h2>
@@ -114,6 +118,32 @@
 <br>
 </div>
 
+<div class="form-popup" id="myForm">
+    <%= form_for(@ingredient,html: {class: "form-container"}) do |f|  %>
+    <%= render 'shared/error_messages' %>
+
+    <%= f.label :ing_name,"Ingredient name" %>
+    <%= f.text_field :ing_name, class: 'form-control' %>
+
+    <%= f.label :description, "Description"  %>
+    <%= f.text_field:description, class: 'form-control' %>
+
+    <%= f.label :group_id ,"Group" %>
+    <%= f.collection_select(:group_id, @groups, :id,:cat_name, :include_blank => "Please select") %>
+
+    <%= f.label :unit_id ,"Units" %>
+    <%= f.collection_select(:unit_id, @units, :id,:unit_name, :include_blank => "Please select") %>
+
+    </br> </br>
+    <%= f.submit "Add ingredient", class: "btn btn-primary" %>
+    <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+    
+    <% end %>
+
+  
+  </form>
+
+</div>
 
                
                 
@@ -154,7 +184,15 @@
           }
         });
         </script>
-      
+        <script>
+        function openForm() {
+            document.getElementById("myForm").style.display = "block";
+        }
+        
+        function closeForm() {
+            document.getElementById("myForm").style.display = "none";
+        }
+        </script>
         
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->

@@ -4,6 +4,8 @@ class UsersController < ApplicationController
          
   end
   def show
+  
+     
      @user = User.find(params[:id])
      @ingredients=Ingredient.joins("JOIN fridges ON fridges.ingredient_id = ingredients.id WHERE fridges.user_id=#{@user.id}")
      @dairy=Ingredient.joins("JOIN fridges ON fridges.ingredient_id = ingredients.id WHERE fridges.user_id=#{@user.id} and ingredients.group_id=7")
@@ -18,7 +20,9 @@ class UsersController < ApplicationController
      @search_term = params[:looking_for] || 'cheese'
 
   	 @recipes = Recipe.for(@search_term)
-
+     @ingredient = Ingredient.new
+     @groups=Group.all
+     @units=Unit.all
   end
 
 
@@ -26,6 +30,7 @@ class UsersController < ApplicationController
       @user = User.new(user_params)
       if @user.save
         log_in @user
+        session[:user_id]=@user.id
         flash[:success] = "Welcome to your fridge!"
       #  redirect_to "http://localhost:3000/ingredients/index"
        redirect_to @user
@@ -37,6 +42,9 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:name, :email, :password, :password_confirmation)
   end
-
+  def destroy
+    log_out
+    redirect_to root_url
+  end
 
 end

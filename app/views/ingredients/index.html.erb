@@ -23,12 +23,28 @@
 
   <div class="col-sm-3" >
 
-    <ul class="list-group">
-    <% @favorites.each do |favorites| %>
-    <li  id='favorites'class="list-group-item " ><span class="glyphicon glyphicon-star pull-left " style="color:yellow "></span> <%= link_to favorites.fav_name ,favorites.recipe_link%></li>
-    <% end %>
-    </ul>
+  <h1>Login</h1>
+  <h1>Sign up</h1>
+  
+  <%= form_for(@ingredient) do |f| %>
+  <%= render 'shared/error_messages' %>
 
+    <%= f.label :ing_name,"Ingredient name"  %>
+     <%= f.text_field :ing_name, class: 'form-control' %>
+
+    <%= f.label :description, "Description"  %>
+    <%= f.email_field :description, class: 'form-control' %>
+
+    <%= f.label :group_id ,"Category" %>
+    <%= f.password_field :group_id, class: 'form-control' %>
+    <%= f.label :unit_id ,"Category" %>
+    <%= f.password_field :unit_id, class: 'form-control' %>
+
+    
+   </br> </br>
+    <%= f.submit "Add ingredient", class: "btn btn-primary" %>
+    
+  <% end %>
 
   </div>
   <div class="col-sm-6">

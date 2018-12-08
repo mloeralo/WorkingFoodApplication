@@ -9,7 +9,8 @@ get 'sessions/new'
  post 'users',  to: 'users#create'
  get  'sessions',   to: 'sessions#new'
  post 'sessions',   to: 'sessions#create'
- delete 'sessions',  to: 'sessions#destroy'
+#  delete 'sessions',  to: 'sessions#destroy'
+ delete 'logout', to: 'sessions#destroy'
 
   get 'recipes/index'
   get 'ingredients/index'
@@ -24,6 +25,7 @@ get 'sessions/new'
   #root 'application#hello'
   resources :groups
   resources :users
+  resources :ingredients
   root 'static_pages#home'
   #root 'static_pages#home'
 
