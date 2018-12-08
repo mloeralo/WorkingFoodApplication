@@ -1,103 +1,103 @@
 
-  <div id="title" class="col-sm-12">
-<h1>Welcome to Smart Recipes</h1>
-</div>
-<div class="container">
-<div class="row">
-<div id="favoritesTitle" class="col-sm-3" >
-  <p>  Favorites</p>
+#   <div id="title" class="col-sm-12">
+# <h1>Welcome to Smart Recipes</h1>
+# </div>
+# <div class="container">
+# <div class="row">
+# <div id="favoritesTitle" class="col-sm-3" >
+#   <p>  Favorites</p>
 
 
 
-</div>
-<div id="fridgeTitle" class="col-sm-6">
-<p>Fridge</p>
-</div>
+# </div>
+# <div id="fridgeTitle" class="col-sm-6">
+# <p>Fridge</p>
+# </div>
 
 
-<div id="recipesTitle" class="col-sm-3">
-<p>  Recipes</p>
-</div>
+# <div id="recipesTitle" class="col-sm-3">
+# <p>  Recipes</p>
+# </div>
 
-<br><br>
+# <br><br>
 
-  <div class="col-sm-3" >
+#   <div class="col-sm-3" >
 
-  <h1>Login</h1>
-  <h1>Sign up</h1>
+#   <h1>Login</h1>
+#   <h1>Sign up</h1>
   
-  <%= form_for(@ingredient) do |f| %>
-  <%= render 'shared/error_messages' %>
+#   <%= form_for(@ingredient) do |f| %>
+#   <%= render 'shared/error_messages' %>
 
-    <%= f.label :ing_name,"Ingredient name"  %>
-     <%= f.text_field :ing_name, class: 'form-control' %>
+#     <%= f.label :ing_name,"Ingredient name"  %>
+#      <%= f.text_field :ing_name, class: 'form-control' %>
 
-    <%= f.label :description, "Description"  %>
-    <%= f.email_field :description, class: 'form-control' %>
+#     <%= f.label :description, "Description"  %>
+#     <%= f.email_field :description, class: 'form-control' %>
 
-    <%= f.label :group_id ,"Category" %>
-    <%= f.password_field :group_id, class: 'form-control' %>
-    <%= f.label :unit_id ,"Category" %>
-    <%= f.password_field :unit_id, class: 'form-control' %>
+#     <%= f.label :group_id ,"Category" %>
+#     <%= f.password_field :group_id, class: 'form-control' %>
+#     <%= f.label :unit_id ,"Category" %>
+#     <%= f.password_field :unit_id, class: 'form-control' %>
 
     
-   </br> </br>
-    <%= f.submit "Add ingredient", class: "btn btn-primary" %>
+#    </br> </br>
+#     <%= f.submit "Add ingredient", class: "btn btn-primary" %>
     
-  <% end %>
+#   <% end %>
 
-  </div>
-  <div class="col-sm-6">
-    <!-- <h1>Listing Ingredients</h1> -->
-
-
-    <!-- <% @ingredients.each do |ingredients| %>
-      <tr>
-        <td><%= ingredients.ing_name%></td>
-
-      </tr>
-    <% end %> -->
-
-    <ul class="list-group">
-    <% @ingredients.each do |ingredients| %>
-    <li class="list-group-item " ><%= ingredients.ing_name%><span class="glyphicon glyphicon-remove  pull-right " style="color:maroon "></span></li>
-    <% end %>
-    </ul>
-
-    <br>
-  </div>
-  <div class="col-sm-6">
-  <!-- <h1>Listing  Ingredients</h1> -->
+#   </div>
+#   <div class="col-sm-6">
+#     <!-- <h1>Listing Ingredients</h1> -->
 
 
-  <!-- <% @ingredients.each do |ingredients| %>
-    <tr>
-      <td><%= ingredients.ing_name%></td>
+#     <!-- <% @ingredients.each do |ingredients| %>
+#       <tr>
+#         <td><%= ingredients.ing_name%></td>
 
-    </tr>
-  <% end %> -->
+#       </tr>
+#     <% end %> -->
 
-  <ul class="list-group">
-  <% @ingredients.each do |ingredients| %>
-  <li class="list-group-item " ><%= ingredients.ing_name%><span class="glyphicon glyphicon-remove  pull-right " style="color:maroon "></span></li>
-  <% end %>
-  </ul>
+#     <ul class="list-group">
+#     <% @ingredients.each do |ingredients| %>
+#     <li class="list-group-item " ><%= ingredients.ing_name%><span class="glyphicon glyphicon-remove  pull-right " style="color:maroon "></span></li>
+#     <% end %>
+#     </ul>
 
-  <br>
-</div>
-  <div class="col-sm-3">
-
-  </div>
-</div>
-</div>
-<!---<div class="center jumbotron">
-
-</div>
-<div>
--->
+#     <br>
+#   </div>
+#   <div class="col-sm-6">
+#   <!-- <h1>Listing  Ingredients</h1> -->
 
 
+#   <!-- <% @ingredients.each do |ingredients| %>
+#     <tr>
+#       <td><%= ingredients.ing_name%></td>
 
-<!--<%= link_to image_tag("rails.png", alt: "Rails logo"),
-            'http://rubyonrails.org/' %>
--->
+#     </tr>
+#   <% end %> -->
+
+#   <ul class="list-group">
+#   <% @ingredients.each do |ingredients| %>
+#   <li class="list-group-item " ><%= ingredients.ing_name%><span class="glyphicon glyphicon-remove  pull-right " style="color:maroon "></span></li>
+#   <% end %>
+#   </ul>
+
+#   <br>
+# </div>
+#   <div class="col-sm-3">
+
+#   </div>
+# </div>
+# </div>
+# <!---<div class="center jumbotron">
+
+# </div>
+# <div>
+# -->
+
+
+
+# <!--<%= link_to image_tag("rails.png", alt: "Rails logo"),
+#             'http://rubyonrails.org/' %>
+# -->
